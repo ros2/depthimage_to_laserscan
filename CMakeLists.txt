@@ -4,7 +4,7 @@ if(NOT WIN32)
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -Wall -Wextra -Wpedantic")
 endif()
 
-find_package(ament_cmake REQUIRED)
+find_package(ament_cmake_ros REQUIRED)
 
 find_package(image_geometry REQUIRED)
 find_package(OpenCV REQUIRED)
@@ -13,7 +13,7 @@ find_package(sensor_msgs REQUIRED)
 
 include_directories(include)
 
-add_library(DepthImageToLaserScan SHARED
+add_library(DepthImageToLaserScan
   src/DepthImageToLaserScan.cpp
 )
 ament_target_dependencies(DepthImageToLaserScan
@@ -22,7 +22,7 @@ ament_target_dependencies(DepthImageToLaserScan
   "sensor_msgs"
 )
 
-add_library(DepthImageToLaserScanROS SHARED
+add_library(DepthImageToLaserScanROS
   src/DepthImageToLaserScanROS.cpp
 )
 ament_target_dependencies(DepthImageToLaserScanROS
@@ -39,7 +39,7 @@ install(DIRECTORY include/
   DESTINATION include
 )
 
-install(TARGETS depthimage_to_laserscan_node
+install(TARGETS DepthImageToLaserScan DepthImageToLaserScanROS depthimage_to_laserscan_node
   EXPORT export_depthimage_to_laserscan_node
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
