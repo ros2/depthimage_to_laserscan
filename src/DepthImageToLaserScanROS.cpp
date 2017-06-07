@@ -49,7 +49,7 @@ DepthImageToLaserScanROS::DepthImageToLaserScanROS(rclcpp::node::Node::SharedPtr
 
   custom_qos_profile.history = RMW_QOS_POLICY_HISTORY_KEEP_LAST;
   custom_qos_profile.depth = 50;
-  custom_qos_profile.reliability = RMW_QOS_POLICY_RELIABILITY_BEST_EFFORT;
+  custom_qos_profile.reliability = RMW_QOS_POLICY_RELIABILITY_RELIABLE;
   custom_qos_profile.durability = RMW_QOS_POLICY_DURABILITY_VOLATILE;
 
   cam_info_sub_ = node_->create_subscription<sensor_msgs::msg::CameraInfo>("depth_camera_info",
