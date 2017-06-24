@@ -42,11 +42,15 @@ install(DIRECTORY include/
   DESTINATION include
 )
 
-install(TARGETS DepthImageToLaserScan DepthImageToLaserScanROS depthimage_to_laserscan_node
+install(TARGETS DepthImageToLaserScan DepthImageToLaserScanROS
   EXPORT export_depthimage_to_laserscan_node
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION bin
+)
+
+install(TARGETS depthimage_to_laserscan_node
+  DESTINATION lib/${PROJECT_NAME}
 )
 
 if(BUILD_TESTING)
