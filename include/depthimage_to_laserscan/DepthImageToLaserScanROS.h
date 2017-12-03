@@ -69,7 +69,7 @@ namespace depthimage_to_laserscan
     rclcpp::subscription::Subscription<sensor_msgs::msg::CameraInfo>::SharedPtr cam_info_sub_;
     rclcpp::subscription::Subscription<sensor_msgs::msg::Image>::SharedPtr depth_image_sub_;
 
-    rclcpp::publisher::Publisher<sensor_msgs::msg::LaserScan>::SharedPtr scan_pub_;
+    rclcpp::Publisher<sensor_msgs::msg::LaserScan>::SharedPtr scan_pub_;
 
     rclcpp::parameter_service::ParameterService::SharedPtr parameter_service_;
 
