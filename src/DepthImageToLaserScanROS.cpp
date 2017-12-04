@@ -46,7 +46,7 @@
 
 using namespace depthimage_to_laserscan;
 
-DepthImageToLaserScanROS::DepthImageToLaserScanROS(rclcpp::node::Node::SharedPtr & node):node_(node) {
+DepthImageToLaserScanROS::DepthImageToLaserScanROS(rclcpp::Node::SharedPtr & node):node_(node) {
 
   cam_info_sub_ = node_->create_subscription<sensor_msgs::msg::CameraInfo>("depth_camera_info",
       std::bind(
